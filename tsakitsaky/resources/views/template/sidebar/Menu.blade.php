@@ -31,7 +31,9 @@
         </a>
     </li>
     <li class="nav-item">
+
         <a class="sidebar-link" href="{{url('classement-course-equipe')}}" >
+
         <span class="icon-holder">
             <i class="c-blue-500 ti-home"></i>
         </span>

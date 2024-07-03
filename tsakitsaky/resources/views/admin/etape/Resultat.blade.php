@@ -27,7 +27,7 @@
                                 <tbody id="table-body">
                                         @foreach ($resultat as $data)
                                             <tr>
-                                                <td>{{$data->rang_coureur2 }}</td>
+                                                <td style="text-align: right">{{$data->rang_coureur2 }}</td>
                                                 <td>{{$data->nom}}</td>
                                                 <td>{{$data->genre}}</td>
                                                 <td>{{$data->temps_chrono}}</td>

@@ -27,7 +27,7 @@
                                             <td style="text-align: right">{{$data->rang}}</td>
                                             <td>{{ $data->etape }}</td>
                                             <td>{{ $data->equipe_libelle }}</td>
-                                            <td>{{ $data->total_points }}</td>
+                                            <td style="text-align: right">{{ $data->total_points }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
