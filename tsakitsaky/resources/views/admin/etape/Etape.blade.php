@@ -31,10 +31,10 @@
                                             <td style="text-align: right">{{ number_format($data->longueur, 2, '.', ',') }}</td>
                                             <td style="text-align: right">{{ number_format($data->nb_coureur, 2, '.', ',') }}</td>
                                             <td>
-                                                <a href="{{url('formulaire_pour_ajout_de_temps')}}/{{$data->id_etape}}">Ajout temps</a>
+                                                <a href="{{url('formulaire-pour-ajout-de-temps')}}/{{$data->id_etape}}">Ajout temps</a>
                                             </td>
                                             <td>
-                                                <a href="{{url('resultat_pour_une_etape')}}/{{$data->id_etape}}">Resultat</a>
+                                                <a href="{{url('resultat-pour-une-etape')}}/{{$data->id_etape}}">Resultat</a>
                                             </td>
                                         </tr>
                                     @endforeach
