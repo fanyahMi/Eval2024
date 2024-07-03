@@ -12,7 +12,7 @@
               <br>
               <div class="row">
                 <div class="col-md-6">
-                   <a href="{{url('ajout_de_penalite')}}" style="background: linear-gradient(to right, #364fcb, #4f6ad7);border: none;display: inline-block;" class="btn btn-primary">Ajouter pénalite</a>
+                   <a href="{{url('ajout-de-penalite')}}" style="background: linear-gradient(to right, #364fcb, #4f6ad7);border: none;display: inline-block;" class="btn btn-primary">Ajouter pénalite</a>
                 </div>
             </div>
             <br>

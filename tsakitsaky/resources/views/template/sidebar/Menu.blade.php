@@ -49,7 +49,7 @@
         </a>
     </li>
         <li class="nav-item">
-            <a class="sidebar-link" href="{{url('liste_des_etapes')}}" >
+            <a class="sidebar-link" href="{{url('liste-des-etapes')}}" >
             <span class="icon-holder">
                 <i class="fas fa-chart-bar"></i>
             </span>
@@ -57,7 +57,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="sidebar-link" href="{{url('liste_des_penalites')}}" >
+            <a class="sidebar-link" href="{{url('liste-des-penalites')}}" >
             <span class="icon-holder">
                 <i class="fas fa-chart-bar"></i>
             </span>
@@ -84,10 +84,10 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="sidebar-link" href="{{ url('importation_etapes_et_resultat') }}">Etapes et resultat</a>
+                <a class="sidebar-link" href="{{ url('importation-etapes-et-resultat') }}">Etapes et resultat</a>
               </li>
               <li>
-                <a class="sidebar-link" href="{{url('importation_des_points')}}">Points</a>
+                <a class="sidebar-link" href="{{url('importation-des-points')}}">Points</a>
               </li>
             </ul>
           </li>
