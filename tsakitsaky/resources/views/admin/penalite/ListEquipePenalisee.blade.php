@@ -33,7 +33,7 @@
                                     @foreach($liste as $data)
                                         <tr>
                                             <td>{{ $data->etape }}</td>
-                                            <td>{{ $data->nom }}</td>
+                                            <td>Equipe {{ $data->nom }}</td>
                                             <td>{{ $data->penalite }}</td>
                                            <td>
                                                 <form action="{{url('supprimerPenalite')}}" method="get">

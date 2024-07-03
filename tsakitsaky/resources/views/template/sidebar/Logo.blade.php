@@ -5,7 +5,7 @@
           <div class="peers ai-c fxw-nw">
             <div class="peer">
               <div>
-                <img src="assets/static/images/running-and-marathon-logo-design-running-man-symbol-free-vector.jpg" alt="" width="50px" >
+                <img src="../assets/static/images/running-and-marathon-logo-design-running-man-symbol-free-vector.jpg" alt="" width="50px" >
               </div>
             </div>
             <div class="peer peer-greed">

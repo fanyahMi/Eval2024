@@ -16,7 +16,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 style="font-size: 15px" class="c-grey-900 mB-20">Affecation de coureur sur l'étape : {{ $etape }} nombre maximum de coureur {{ $nbMax }}</h2>
+                        <h5 style="font-size: 15px" class="c-grey-900 mB-20"> {{ $etape }} nombre maximum de coureur {{ $nbMax }}</h5>
                     </div>
                 </div>
                 <div class="row">
@@ -46,7 +46,7 @@
                     <br>
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div id="table-container">
                             <table class="table table-striped table-bordered">
                                 <thead>
@@ -59,7 +59,7 @@
                                     @foreach($recherches as $data)
                                         <tr>
                                             <td >{{$data->nom}}</td>
-                                            <td>{{ $data->numero_dossard }}</td>
+                                            <td style="text-align: right">{{ $data->numero_dossard }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

@@ -31,7 +31,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="sidebar-link" href="acceuil" >
+        <a class="sidebar-link" href="{{url('acceuil')}}" >
         <span class="icon-holder">
             <i class="c-blue-500 ti-home"></i>
         </span>
