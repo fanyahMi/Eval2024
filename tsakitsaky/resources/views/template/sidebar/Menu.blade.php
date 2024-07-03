@@ -11,7 +11,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="sidebar-link" href="{{url('liste_des_etapes_par_equipe')}}" >
+            <a class="sidebar-link" href="{{url('liste-etapes-course')}}" >
             <span class="icon-holder">
                 <i class="fas fa-chart-bar"></i>
             </span>
@@ -105,10 +105,10 @@
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a class="sidebar-link" href="{{url('classement_general_par_etape')}}">Etape</a>
+            <a class="sidebar-link" href="{{url('classements-par-etape-par-equipe')}}">Etape</a>
           </li>
           <li>
-            <a class="sidebar-link" href="{{url('classement_par_equipe')}}">Equipe</a>
+            <a class="sidebar-link" href="{{url('classement-par-equipe-par-categorie')}}">Equipe</a>
           </li>
         </ul>
     </li>

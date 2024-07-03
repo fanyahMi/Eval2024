@@ -4,7 +4,7 @@
           <div class="bgc-white bd bdrs-3 p-20 mB-20">
               <div class="row">
                   <div class="col-md-6">
-                      <h1 style="font-size: 20px" class="c-grey-900 mB-20">Liste des étapes</h1>
+                      <h1 style="font-size: 20px" class="c-grey-900 mB-20">Liste des étapes de la course</h1>
                   </div>
                   <div class="col-md-2"></div>
               </div>
@@ -30,7 +30,7 @@
                                             <td style="text-align: right">{{ number_format($data->longueur, 2, '.', ',') }}</td>
                                             <td style="text-align: right">{{ number_format($data->nb_coureur, 2, '.', ',') }}</td>
                                             <td>
-                                                <a href="{{url('liste_des_Coureur')}}/{{$data->id_etape}}">Affectation</a>
+                                                <a href="{{url('Liste-des-coureurs')}}/{{$data->id_etape}}">Affectation</a>
                                             </td>
 
                                         </tr>
@@ -50,21 +50,3 @@
   </div>
 </div>
 
-<script src="{{ asset('assets/js/jquery.js') }}"></script>
-<script type="text/javascript">
-  /*$(document).ready(function() {
-      $('#inputtext').on('input', function() {
-          var recherche = $(this).val();
-          $.ajax({
-              type: 'GET',
-              url: "{{url('rechercheTableau')}}",
-              data: {
-                  recherche: recherche
-              },
-              success: function(data) {
-                  $('#table-container').html(data);
-              }
-          });
-      });
-  });*/
-</script>

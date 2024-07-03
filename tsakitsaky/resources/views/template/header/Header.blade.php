@@ -31,7 +31,7 @@
                   <li role="separator" class="divider"></li>
                   <li>
                         @if(session('id_utilisateurEquipe'))
-                            <a href="{{ url('/logoutEquipe') }}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                            <a href="{{ url('/logout-Equipe') }}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                             <i class="ti-power-off mR-10"></i>
                             <span>Logout Equipe</span>
                           </a>

@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="peer">
-                        <a href="{{url('ajout_de_coureur')}}/{{$item->id_etape}}" style="background: linear-gradient(to right, #364fcb, #4f6ad7);border: none;display: inline-block;" class="btn btn-color">
+                        <a href="{{url('ajout-de-coureur')}}/{{$item->id_etape}}" style="background: linear-gradient(to right, #364fcb, #4f6ad7);border: none;display: inline-block;" class="btn btn-color">
                         Ajout coureur</a>
                     </div>
                 </div>
