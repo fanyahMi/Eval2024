@@ -21,4 +21,8 @@
 
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
 
+    <FilesMatch "\.(js)$">
+        SetOutputFilter DEFLATE
+    </FilesMatch>
+
 </IfModule>

@@ -18,10 +18,9 @@
 
                 </div>
 
-                <!-- Ajout du formulaire sur une seule ligne -->
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{url('add-temps')}}" method="post">
+                        <form id="addTempsForm" action="{{url('add-temps')}}" method="post">
                             @csrf
                             <div class="row" >
                                 <div class="col-md-3">
@@ -182,35 +181,28 @@
 </div>
 
 <script src="{{ asset('assets/js/jquery.js') }}"></script>
-
 <script>
+    $(document).ready(function() {
+        $('#addTempsForm').submit(function(event) {
+            event.preventDefault();
 
-
-</script>
-
-<script>
- /*   document.addEventListener('DOMContentLoaded', function () {
-        const searchInput = document.getElementById('inputtext');
-        const tableBody = document.getElementById('table-body');
-
-        searchInput.addEventListener('input', function () {
-            const searchTerm = this.value.toLowerCase();
-            const rows = tableBody.getElementsByTagName('tr');
-
-            Array.from(rows).forEach(row => {
-                let found = false;
-                Array.from(row.cells).forEach(cell => {
-                    const cellText = cell.textContent.toLowerCase();
-                    if (cellText.includes(searchTerm)) {
-                        found = true;
-                    }
-                });
-                if (found) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function(response) {
+                    alert('Temps ajouté avec succès.');
+                    $('#addTempsForm')[0].reset();
+                    location.reload();
+                },
+                error: function(xhr, status, error) {
+                    var errors = xhr.responseJSON.errors;
+                    $.each(errors, function(index, value) {
+                        $('#error_' + index).text(value);
+                    });
                 }
             });
         });
-    });*/
+    });
 </script>

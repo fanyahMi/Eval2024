@@ -100,31 +100,41 @@ class AdminController extends Controller
         ]);
      }
 
-     public function addTemps(Request $request){
-
+     public function addTemps(Request $request)
+    {
+        // Règles de validation
         $rules = [
             'coureur_etape_id' => 'required|numeric|min:1',
-            'date_depart'=>'required|date',
+            'date_depart' => 'required|date',
             'heure_depart' => 'required|date_format:H:i:s',
-            'heure_arriver' => 'required|after:date_cours heure_depart'
+            'heure_arriver' => 'required|after:date_depart heure_depart'
         ];
-        $validator = Validator::make($request->all(), $rules);
 
+        // Messages d'erreur personnalisés
+        $messages = [
+            'heure_arriver.after' => 'L\'heure d\'arrivée doit être postérieure à l\'heure de départ et à la date de départ.'
+        ];
+
+        // Validation des données
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        // Vérification de la validation
         if ($validator->fails()) {
-            dd($validator);
-            return redirect()->back()
-                        ->withErrors($validator)
-                        ->withInput();
+            return response()->json(['errors' => $validator->errors()->all()], 422);
         }
 
+        // Récupération des données du formulaire
         $coureur_etape_id = $request->input('coureur_etape_id');
-        $date_cours=$request->input('date_depart');
+        $date_depart = $request->input('date_depart');
         $heure_depart = $request->input('heure_depart');
         $heure_arriver = $request->input('heure_arriver');
 
-        TempsCoureurEtape::insertTempsCoureurEtape($coureur_etape_id,$date_cours, $heure_depart, $heure_arriver);
-        return redirect()->back();
-     }
+        // Insertion des données dans la base de données
+        TempsCoureurEtape::insertTempsCoureurEtape($coureur_etape_id, $date_depart, $heure_depart, $heure_arriver);
+
+        // Réponse de succès
+        return response()->json(['success' => 'Temps ajouté avec succès.']);
+    }
 
      public function importetapesresultat(){
         return view("template.Layout", [
@@ -298,5 +308,27 @@ class AdminController extends Controller
             'resultat' => $result
         ]);
      }
+
+     public static function getClassementGlobal()
+    {
+        $classementEquipeSimple = Equipe::getClassementEquipeSimple();
+        return response()->json(['classementEquipeSimple' => $classementEquipeSimple]);
+    }
+
+    public static function getClassementParCategorie()
+    {
+        $resultat = Categorie::getClassementCategorie();
+        return response()->json(['resultat' => $resultat]);
+    }
+
+    public function getCertificatData()
+    {
+        $result = DB::table('v_classement_equipe_simple')
+                    ->select('*')
+                    ->orderBy('total_points', 'DESC')
+                    ->first();
+
+        return response()->json(['result' => $result]);
+    }
 
 }

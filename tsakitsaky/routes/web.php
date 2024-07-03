@@ -10,6 +10,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\EquipeAdminController;
 use App\Http\Controllers\PointController;
+use Illuminate\Support\Facades\Response;
 
 
 /*****MidlWare ****/
@@ -42,6 +43,10 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::get('/export', [AdminController::class, 'export']);
     Route::get('/resultat-pour-une-etape/{id}', [AdminController::class, 'resultatEtape']);
     Route::get('/pointEtape/{id}', [AdminController::class, 'poinEtape']);
+    Route::get('/classement/global', [AdminController::class, 'getClassementGlobal']);
+    Route::get('/classement/categorie', [AdminController::class, 'getClassementParCategorie']);
+    Route::get('/certificat-data', [AdminController::class, 'getCertificatData']);
+
 });
 /*****************/
 
@@ -90,3 +95,13 @@ Route::middleware([CheckEquipeRole::class])->group(function () {
     Route::get('/tableauNormal', [RechercheController::class, 'tableauNormal'])->name('tableauNormal');
 });
 
+
+Route::get('js/main.js', function () {
+    $content = file_get_contents(public_path('js/main.js'));
+
+    $response = Response::make($content, 200);
+    $response->header('Content-Type', 'application/javascript');
+    $response->header('Cache-Control', 'public, max-age=604800'); // Cache pendant 7 jours (604800 secondes)
+
+    return $response;
+});
