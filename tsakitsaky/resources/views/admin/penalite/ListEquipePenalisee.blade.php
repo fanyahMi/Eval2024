@@ -4,7 +4,7 @@
           <div class="bgc-white bd bdrs-3 p-20 mB-20">
               <div class="row">
                   <div class="col-md-6">
-                      <h4 class="c-grey-900 mB-20">Listes des Pénalité par équipe  </h4>
+                      <h1 style="font-size: 20px;font-weight: bold" class="c-grey-900 mB-20">Listes des Pénalité des équipes  </h1>
                   </div>
                   <div class="col-md-2"></div>
               </div>
@@ -12,7 +12,7 @@
               <br>
               <div class="row">
                 <div class="col-md-6">
-                   <a href="{{url('penalite')}}" style="background: linear-gradient(to right, #364fcb, #4f6ad7);border: none;display: inline-block;" class="btn btn-primary">Ajouter pénalite</a>
+                   <a href="{{url('ajout_de_penalite')}}" style="background: linear-gradient(to right, #364fcb, #4f6ad7);border: none;display: inline-block;" class="btn btn-primary">Ajouter pénalite</a>
                 </div>
             </div>
             <br>

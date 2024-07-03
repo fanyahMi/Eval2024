@@ -19,75 +19,54 @@ use App\Http\Middleware\CheckUserSession;
 
 
 /*************Admin *************/
-Route::get('/loginAdmin', [AdminController::class, 'signIn'])->name('loginAdmin');
+Route::get('/Login-Administrateur', [AdminController::class, 'signIn'])->name('Login-Administrateur');
 Route::post('/login', [AdminController::class, 'login'])->name('login');
 Route::middleware([CheckAdminRole::class])->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-    Route::get('/logoutAdmin', [AdminController::class, 'logout'])->name('logoutAdmin');
-    Route::get('/listeEtape', [AdminController::class, 'listeEtape'])->name('listeEtape');
-    Route::get('/formulaireTemps/{id}', [AdminController::class, 'formulaireTemps'])->name('formulaireTemps');
+    Route::get('/acceuil', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/logoutAdmin', [AdminController::class, 'logout']);
+    Route::get('/liste_des_etapes', [AdminController::class, 'listeEtape'])->name('listeEtape');
+    Route::get('/formulaire_pour_ajout_de_temps/{id}', [AdminController::class, 'formulaireTemps'])->name('formulaireTemps');
     Route::post('/addTemps', [AdminController::class, 'addTemps'])->name('addTemps');
-    Route::get('/importetapesresultat', [AdminController::class, 'importetapesresultat']);
-    Route::get('/importpoint', [AdminController::class, 'importpoint']);
+    Route::get('/importation_etapes_et_resultat', [AdminController::class, 'importetapesresultat']);
+    Route::get('/importation_des_points', [AdminController::class, 'importpoint']);
     Route::post('/importationpoint', [AdminController::class, 'importationpoint']);
     Route::post('/importationetapesresultat', [AdminController::class, 'importationetapesresultat']);
     Route::get('/genererCategorie', [AdminController::class, 'genererCategorie'])->name('genererCategorie');
     Route::get('/clearBase', [AdminController::class, 'clearBase'])->name('clearBase');
-    Route::get('/listPenalite', [AdminController::class, 'listPenalite']);
-    Route::get('/penalite', [AdminController::class, 'penalite']);
+    Route::get('/liste_des_penalites', [AdminController::class, 'listPenalite']);
+    Route::get('/ajout_de_penalite', [AdminController::class, 'penalite']);
     Route::post('/addPenalite', [AdminController::class, 'addPenalite']);
     Route::get('/supprimerPenalite', [AdminController::class, 'supprimerPenalite']);
     Route::get('/certificat', [AdminController::class, 'certificat']);
     Route::get('/exportation', [AdminController::class, 'exportation']);
     Route::get('/export', [AdminController::class, 'export']);
-    Route::get('/resultatEtape/{id}', [AdminController::class, 'resultatEtape']);
+    Route::get('/resultat_pour_une_etape/{id}', [AdminController::class, 'resultatEtape']);
     Route::get('/pointEtape/{id}', [AdminController::class, 'poinEtape']);
 });
 /*****************/
 
 
 /*************Equipe*************/
-Route::get('/loginEquipe', [EquipeController::class, 'signIn'])->name('loginEquipe');
+Route::get('/Login-Equipe', [EquipeController::class, 'signIn']);
 Route::post('/siginEquipe', [EquipeController::class, 'login'])->name('login');
 Route::middleware([CheckEquipeRole::class])->group(function () {
     Route::get('/logoutEquipe', [EquipeController::class, 'logout'])->name('logoutEquipe');
     Route::get('/', [EquipeController::class, 'index'])->name('');
-    Route::get('/listeEtapeEquipe', [EquipeController::class, 'listeEtapeEquipe'])->name('listeEtapeEquipe');
-    Route::get('/listeCoureur/{id}', [EquipeController::class, 'listeCoureur'])->name('listeCoureur');
-    Route::post('/addAffectationEtape', [EquipeController::class, 'addAffectationEtape'])->name('addAffectationEtape');
-    Route::get('/ajoutcoureur/{id}', [EquipeController::class, 'ajoutcoureur'])->name('addAffectationEtape');
+    Route::get('/liste_des_etapes_par_equipe', [EquipeController::class, 'listeEtapeEquipe'])->name('listeEtapeEquipe');
+    Route::get('/liste_des_Coureur/{id}', [EquipeController::class, 'listeCoureur'])->name('listeCoureur');
+    Route::post('/affectation_du_coureur', [EquipeController::class, 'addAffectationEtape'])->name('addAffectationEtape');
+    Route::get('/ajout_de_coureur/{id}', [EquipeController::class, 'ajoutcoureur'])->name('addAffectationEtape');
 });
 /*****************/
 
 
 /************Equipe et Admin *******/
 Route::middleware([CheckUserSession::class])->group(function () {
-    Route::get('/classementEtape', [EquipeAdminController::class, 'classementEtape'])->name('classementEtape');
-    Route::get('/classementEquipe', [EquipeAdminController::class, 'classementEquipe'])->name('classementEquipe');
+    Route::get('/classement_general_par_etape', [EquipeAdminController::class, 'classementEtape'])->name('classementEtape');
+    Route::get('/classement_par_equipe', [EquipeAdminController::class, 'classementEquipe'])->name('classementEquipe');
 
 });
 /*************************************************** */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/pdf', [Controllers::class, 'pdf'])->name('pdf');
 
 Route::middleware([CheckEquipeRole::class])->group(function () {

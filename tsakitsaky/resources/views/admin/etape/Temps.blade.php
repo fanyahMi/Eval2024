@@ -13,7 +13,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="c-grey-900 mB-20">Temps effectuer par coureur sur l'étape : {{ $etape }}</h4>
+                        <h1 style="font-size: 20px;font-weight: bold" class="c-grey-900 mB-20">Temps effectuer par coureur sur l'étape : {{ $etape }}</h1>
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-4">
@@ -77,7 +77,7 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <h4 class="c-grey-900 mB-20">Simple</h4>
+                            <h4 class="c-grey-900 mB-20">Sans categorie</h4>
                         </div>
                     </div>
                         <br>

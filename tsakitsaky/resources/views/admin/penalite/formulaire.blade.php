@@ -1,6 +1,6 @@
 <div class="masonry-item col-md-12">
     <div class="bgc-white p-20 bd">
-        <h4 class="c-grey-900"><b>Ajout penalitée</b></h4>
+        <h1 style="font-size: 20px; font-weight: bold" class="c-grey-900">Ajout penalitée</h1>
         <div class="mT-30">
             <form action="{{url('addPenalite')}}" method="post" >
 

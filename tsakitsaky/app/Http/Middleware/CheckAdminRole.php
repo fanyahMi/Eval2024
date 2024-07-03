@@ -17,7 +17,7 @@ class CheckAdminRole
     public function handle(Request $request, Closure $next)
     {
         if (!$request->session()->has('id_utilisateurAdmin')) {
-            return redirect('/loginAdmin');
+            return redirect('/Login-Administrateur');
         }
 
         if ($request->session()->has('roles')  && $request->session()->has('id_utilisateurAdmin')) {

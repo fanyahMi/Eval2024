@@ -5,7 +5,7 @@
           <div class="bgc-white bd bdrs-3 p-20 mB-20">
               <div class="row">
                   <div class="col-md-6">
-                      <h4 class="c-grey-900 mB-20">Liste des étapes</h4>
+                      <h1 style="font-size: 20px;font-weight: bold" class="c-grey-900 mB-20">Liste des étapes</h1>
                   </div>
                   <div class="col-md-2"></div>
               </div>
@@ -31,10 +31,10 @@
                                             <td style="text-align: right">{{ number_format($data->longueur, 2, '.', ',') }}</td>
                                             <td style="text-align: right">{{ number_format($data->nb_coureur, 2, '.', ',') }}</td>
                                             <td>
-                                                <a href="{{url('formulaireTemps')}}/{{$data->id_etape}}">Ajout temps</a>
+                                                <a href="{{url('formulaire_pour_ajout_de_temps')}}/{{$data->id_etape}}">Ajout temps</a>
                                             </td>
                                             <td>
-                                                <a href="{{url('resultatEtape')}}/{{$data->id_etape}}">Resultat</a>
+                                                <a href="{{url('resultat_pour_une_etape')}}/{{$data->id_etape}}">Resultat</a>
                                             </td>
                                         </tr>
                                     @endforeach

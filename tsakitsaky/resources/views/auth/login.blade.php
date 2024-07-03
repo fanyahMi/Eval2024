@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <title>Sign In</title>
+    <title>Login Administrateur</title>
     <style>
       #loader {
         transition: all 0.3s ease-in-out;
@@ -81,11 +81,10 @@
         </div>
       </div>
       <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width: 320px;">
-        <h4 class="fw-300  mB-40" id="login" style="color: #f93765;font-size: 1cm;letter-spacing: 2px;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);text-transform: uppercase;font-family: 'Georgia', serif;border-bottom: 3px solid #DAA520;">Login Administrateur</h4>
+        <h1 class="fw-300  mB-40" id="login" style="color: #f93765;font-size: 1cm;letter-spacing: 2px;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);text-transform: uppercase;font-family: 'Georgia', serif;border-bottom: 3px solid #DAA520;">Login Administrateur</h1>
         <form action="{{ url('login') }}" method="POST">
             @csrf
             <div class="mb-3">
-
                 <label class="text-normal text-dark form-label">Email</label>
                 <input type="text" class="form-control" name="email" value="admin" required>
             </div>

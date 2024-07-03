@@ -26,7 +26,7 @@ class AdminController extends Controller
         $classementCategorie = Categorie::getClassementCategorie();
         $classemeEquipeSimple =  Equipe::getClassementEquipeSimple();
         return view("template.Layout", [
-            'title' => 'Graphe',
+            'title' => 'Acceuil administrateur',
             'page' => "admin.Acceuil",
             'classementEquipe' => $classementEquipe,
             'classementEquipeSimple' => $classemeEquipeSimple,
@@ -37,7 +37,7 @@ class AdminController extends Controller
     public function signIn(Request $request)
     {
        if ($request->session()->has('id_utilisateurAdmin')) {
-           return redirect('/dashboar');
+           return redirect('/acceuil');
        }
         return view('auth.login');
     }
@@ -45,12 +45,12 @@ class AdminController extends Controller
     public function logout(Request $request)
      {
         if (!$request->session()->has('id_utilisateurAdmin')) {
-            return redirect('loginAdmin');
+            return redirect('Login-Administrateur');
         }
         $request->session()->forget('id_utilisateurAdmin');
         $request->session()->forget('name');
         $request->session()->forget('roles');
-        return Redirect::to('loginAdmin');
+        return Redirect::to('Login-Administrateur');
      }
 
     public function login(Request $request)
@@ -63,7 +63,7 @@ class AdminController extends Controller
             $request->session()->put('id_utilisateurAdmin', $response['user']->id_utilisateur);
             $request->session()->put('name', $response['user']->nom);
             $request->session()->put('roles', $response['roles']);
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/acceuil');
         } catch (\Throwable $th) {
           return back()->withErrors(['email' => $th->getMessage()]);
         }
@@ -85,7 +85,7 @@ class AdminController extends Controller
         $listeCoureur = TempsCoureurEtape::getListeCoureurNonTemps($id);
         $simple = TempsCoureurEtape::getListeCoureurSimple($id);
         return view("template.Layout", [
-            'title' => 'Formualre temps courier',
+            'title' => 'Formualre pour ajouter le temps par coureur',
             'page' => "admin.etape.Temps",
             'simple' => $simple,
             'resultat' => $rec,
@@ -122,7 +122,7 @@ class AdminController extends Controller
 
      public function importetapesresultat(){
         return view("template.Layout", [
-            'title' => 'Import',
+            'title' => 'Importation des données',
             'page' => "admin.import.ImportEtapeResultat"
 
         ]);
@@ -130,7 +130,7 @@ class AdminController extends Controller
 
      public function importpoint(){
         return view("template.Layout", [
-            'title' => 'Import',
+            'title' => 'Importation des points',
             'page' => "admin.import.ImportPoint"
 
         ]);
@@ -179,7 +179,7 @@ class AdminController extends Controller
         $etape=Etape::all();
         $equipe=Equipe::getEquipe();
         return view("template.Layout", [
-            'title' => 'Penalité',
+            'title' => 'Formulaire pour ajout de penalite',
             'page' => "admin.penalite.formulaire",
             'etapes' => $etape,
             'equipes' => $equipe
@@ -213,7 +213,7 @@ class AdminController extends Controller
      public function listPenalite(){
         $liste=Penalite::listPenalite();
         return view("template.Layout", [
-            'title' => 'Penalité',
+            'title' => 'Liste des penalités',
             'page' => "admin.penalite.ListEquipePenalisee",
             'liste' => $liste
         ]);
@@ -261,7 +261,7 @@ class AdminController extends Controller
                     ->get();
 
         return view("template.Layout", [
-            'title' => 'Formualre temps courier',
+            'title' => 'Resultat pour une etape',
             'page' => "admin.etape.Resultat",
             'resultat' => $result
         ]);

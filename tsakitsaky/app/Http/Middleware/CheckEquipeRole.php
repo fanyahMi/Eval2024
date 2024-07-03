@@ -17,7 +17,7 @@ class CheckEquipeRole
     public function handle(Request $request, Closure $next)
     {
         if (!$request->session()->has('id_utilisateurEquipe')) {
-            return redirect('/loginEquipe');
+            return redirect('/Login-Equipe');
         }
         if ($request->session()->has('roles') && $request->session()->has('id_utilisateurEquipe')) {
             $roles = session('roles');

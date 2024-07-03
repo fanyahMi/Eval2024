@@ -11,7 +11,7 @@ class EquipeAdminController extends Controller
     public function classementEtape(){
         $classementEtape = Equipe::getClassementEtape();
         return view("template.Layout", [
-            'title' => 'Classement étape',
+            'title' => 'Classement general par étape',
             'page' => "classement.Etape",
             'classementEtape' => $classementEtape
         ]);
@@ -22,7 +22,7 @@ class EquipeAdminController extends Controller
         $classemeEquipeSimple =  Equipe::getClassementEquipeSimple();
 
         return view("template.Layout", [
-            'title' => 'Classement équipe',
+            'title' => 'Classement par équipe',
             'page' => "classement.Equipe",
             'classementEquipe' => $classementEquipe,
             'classementEquipeSimple' => $classemeEquipeSimple,

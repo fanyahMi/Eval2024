@@ -7,8 +7,8 @@
 
 <div class="row mT-30">
       <div class="row mT-15">
+        <h1 class="c-grey-900 mB-20" style="font-size: 20px;">Liste des coureurs par étape </h1>
         <div class="col-md-12">
-
             @if ($errors->any())
                 <div class="error-message">
                     @foreach ($errors->all() as $error)
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="peer">
-                        <a href="{{url('ajoutcoureur')}}/{{$item->id_etape}}" style="background: linear-gradient(to right, #364fcb, #4f6ad7);border: none;display: inline-block;" class="btn btn-color">
+                        <a href="{{url('ajout_de_coureur')}}/{{$item->id_etape}}" style="background: linear-gradient(to right, #364fcb, #4f6ad7);border: none;display: inline-block;" class="btn btn-color">
                         Ajout coureur</a>
                     </div>
                 </div>

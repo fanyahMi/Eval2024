@@ -13,7 +13,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="c-grey-900 mB-20">Affecation de coureur sur l'étape : {{ $etape }} nombre maximum de coureur {{ $nbMax }}</h4>
+                        <h1 style="font-size: 20px" class="c-grey-900 mB-20">Affecation de coureur sur l'étape : {{ $etape }} nombre maximum de coureur {{ $nbMax }}</h1>
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-4">
@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         @if(count($recherches) < $nbMax)
-                        <form action="{{url('addAffectationEtape')}}" method="post">
+                        <form action="{{url('affectation_du_coureur')}}" method="post">
                             @csrf
                             <div class="row" >
                                 <div class="col-md-3">

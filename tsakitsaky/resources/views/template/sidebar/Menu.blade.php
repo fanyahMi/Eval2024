@@ -11,7 +11,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="sidebar-link" href="{{url('listeEtapeEquipe')}}" >
+            <a class="sidebar-link" href="{{url('liste_des_etapes_par_equipe')}}" >
             <span class="icon-holder">
                 <i class="fas fa-chart-bar"></i>
             </span>
@@ -31,7 +31,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="sidebar-link" href="dashboard" >
+        <a class="sidebar-link" href="acceuil" >
         <span class="icon-holder">
             <i class="c-blue-500 ti-home"></i>
         </span>
@@ -49,7 +49,7 @@
         </a>
     </li>
         <li class="nav-item">
-            <a class="sidebar-link" href="{{url('listeEtape')}}" >
+            <a class="sidebar-link" href="{{url('liste_des_etapes')}}" >
             <span class="icon-holder">
                 <i class="fas fa-chart-bar"></i>
             </span>
@@ -57,7 +57,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="sidebar-link" href="{{url('listPenalite')}}" >
+            <a class="sidebar-link" href="{{url('liste_des_penalites')}}" >
             <span class="icon-holder">
                 <i class="fas fa-chart-bar"></i>
             </span>
@@ -84,10 +84,10 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="sidebar-link" href="{{ url('importetapesresultat') }}">Etapes et resultat</a>
+                <a class="sidebar-link" href="{{ url('importation_etapes_et_resultat') }}">Etapes et resultat</a>
               </li>
               <li>
-                <a class="sidebar-link" href="{{url('importpoint')}}">Points</a>
+                <a class="sidebar-link" href="{{url('importation_des_points')}}">Points</a>
               </li>
             </ul>
           </li>
@@ -105,10 +105,10 @@
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a class="sidebar-link" href="{{url('classementEtape')}}">Etape</a>
+            <a class="sidebar-link" href="{{url('classement_general_par_etape')}}">Etape</a>
           </li>
           <li>
-            <a class="sidebar-link" href="{{url('classementEquipe')}}">Equipe</a>
+            <a class="sidebar-link" href="{{url('classement_par_equipe')}}">Equipe</a>
           </li>
         </ul>
     </li>
