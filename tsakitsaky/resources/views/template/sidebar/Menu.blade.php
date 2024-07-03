@@ -25,7 +25,7 @@
     <li class="nav-item">
         <a class="sidebar-link" href="{{url('clear-Base')}}" >
         <span class="icon-holder">
-            <i class=""></i>
+            <i class="fas fa-times"></i>
         </span>
         <span class="title">Clear</span>
         </a>
@@ -45,7 +45,7 @@
     <li class="nav-item">
         <a class="sidebar-link" href="{{url('certificat')}}" >
         <span class="icon-holder">
-            <i class="fas fas fa-box"></i>
+            <i class="fas fa-trophy"></i>
         </span>
         <span class="title">Certificat</span>
         </a>
@@ -53,7 +53,7 @@
         <li class="nav-item">
             <a class="sidebar-link" href="{{url('liste-des-etapes')}}" >
             <span class="icon-holder">
-                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-check-circle"></i>
             </span>
             <span class="title">Liste Etape</span>
             </a>
@@ -61,7 +61,7 @@
         <li class="nav-item">
             <a class="sidebar-link" href="{{url('liste-des-penalites')}}" >
             <span class="icon-holder">
-                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-exclamation-circle"></i>
             </span>
             <span class="title">Liste penalité</span>
             </a>
@@ -69,7 +69,7 @@
         <li class="nav-item">
             <a class="sidebar-link" href="{{url('generer-categorie')}}" >
             <span class="icon-holder">
-                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-cogs"></i>
             </span>
             <span class="title">Generer Categorie</span>
             </a>
@@ -77,7 +77,7 @@
         <li class="nav-item dropdown">
             <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
-                <i class="c-orange-500 ti-layout-list-thumb"></i>
+                <i class="fas fa-upload"></i>
               </span>
               <span class="title">Import</span>
               <span class="arrow">
@@ -98,7 +98,7 @@
     <li class="nav-item dropdown">
         <a class="dropdown-toggle" href="javascript:void(0);">
           <span class="icon-holder">
-            <i class="c-orange-500 ti-layout-list-thumb"></i>
+            <i class="ti-layout-list-thumb"></i>
           </span>
           <span class="title">Classemenet</span>
           <span class="arrow">
