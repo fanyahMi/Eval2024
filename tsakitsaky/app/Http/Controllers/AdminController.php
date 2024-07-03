@@ -26,20 +26,20 @@ class AdminController extends Controller
         $classementCategorie = Categorie::getClassementCategorie();
         $classemeEquipeSimple =  Equipe::getClassementEquipeSimple();
         return view("template.Layout", [
-            'title' => 'Acceuil administrateur',
+            'title' => 'Classement de Course par Équipe - Global et par Catégorie            ',
             'page' => "admin.Acceuil",
             'classementEquipe' => $classementEquipe,
             'classementEquipeSimple' => $classemeEquipeSimple,
             'resultat'  =>$classementCategorie,
-            'descriptionMeta' => "Découvrez le classement des équipes par catégorie grâce à notre outil de visualisation graphique. Explorez les performances des équipes dans différentes catégories sportives et comparez leurs classements. Notre graphique interactif vous permettra de voir rapidement qui occupe les premières places et qui progresse dans chaque catégorie. Restez informé sur les performances des équipes et suivez leur évolution tout au long de la saison.",
-            'keywordMeta'=>"classement équipes par catégorie, classement graphique, performances équipes, comparaison classement, visualisation données, catégories sportives, équipes sportives, progression équipes, classement sportif, suivi performances"
-        ]);
+            'descriptionMeta' => "Consultez le classement complet des courses par équipe, incluant les classements globaux sans catégorie et les classements spécifiques par catégorie. Visualisez les performances des équipes grâce à des graphiques détaillés.            ",
+            'keywordMeta'=>"classement de course, classement par équipe, classement global, classement par catégorie, course, compétition, résultats, graphiques de performance"
+                ]);
     }
 
     public function signIn(Request $request)
     {
        if ($request->session()->has('id_utilisateurAdmin')) {
-           return redirect('/acceuil');
+           return redirect('/classement-course-equipe');
        }
         return view('auth.login');
     }
@@ -65,7 +65,7 @@ class AdminController extends Controller
             $request->session()->put('id_utilisateurAdmin', $response['user']->id_utilisateur);
             $request->session()->put('name', $response['user']->nom);
             $request->session()->put('roles', $response['roles']);
-            return redirect()->intended('/acceuil');
+            return redirect()->intended('/classement-course-equipe');
         } catch (\Throwable $th) {
           return back()->withErrors(['email' => $th->getMessage()]);
         }
@@ -75,10 +75,10 @@ class AdminController extends Controller
         $rec = Etape::paginate(10);
 
         return view("template.Layout", [
-            'title' => 'Liste des étapes',
+            'title' => 'Liste des Étapes de la Course - Ajouter Temps et Résultats par Étape',
             'page' => "admin.etape.Etape",
-            'descriptionMeta' => "Découvrez la liste complète des étapes passionnantes de cette course captivante ! Notre page présente une compilation détaillée des différentes étapes de la course, vous permettant de suivre le parcours du début à la fin. Explorez les distances, les points de contrôle et les défis uniques de chaque étape. Plongez dans l'action de cette course palpitante et suivez les coureurs à travers chaque étape jusqu'à la ligne d'arrivée.",
-            'keywordMeta'=>"liste des étapes d'une course, parcours de course, distances d'étapes, points de contrôle, défis de chaque étape, suivi des coureurs, course palpitante, ligne d'arrivée, itinéraire de course, étapes de compétition",
+            'descriptionMeta' => "Consultez la liste complète des étapes de la course, avec des détails sur le nombre de coureurs, la longueur de chaque étape, et accédez aux liens pour ajouter les temps pour chaque étape et consulter les résultats détaillés.            ",
+            'keywordMeta'=>"étapes de la course, liste des étapes, détails des étapes, ajouter temps étape, résultats par étape, course, compétition, gestion de course",
             'recherches' => $rec
         ]);
      }
@@ -182,7 +182,7 @@ class AdminController extends Controller
 
      public function clearBase(){
         Utilisateurs::clearBase();
-        return redirect('listeEtape');
+        return redirect('classement-course-equipe');
      }
 
      public function penalite(){
@@ -277,7 +277,7 @@ class AdminController extends Controller
                     ->get();
 
         return view("template.Layout", [
-            'title' => 'Resultat pour une etape',
+            'title' => 'Résultats pour une Étape de Course - Liste par Coureur avec Chrono, Pénalité et Temps Final            ',
             'page' => "admin.etape.Resultat",
             'descriptionMeta' => "Consultez les résultats complets de cette étape passionnante, indépendamment de la catégorie des participants ! Notre page affiche les classements détaillés de l'étape, mettant en évidence les performances des coureurs sans distinction de catégorie. Découvrez les temps, les positions et les statistiques clés de chaque coureur. Suivez l'évolution de la compétition et plongez-vous dans les détails captivants de cette étape, où tous les coureurs sont évalués sur un pied d'égalité.",
             'keywordMeta'=>"résultat étape, classement étape, temps coureurs, performance coureurs, compétition sportive, résultats complets, temps étape, classement indépendant catégorie, suivi compétition, détails étape, statistiques étape",

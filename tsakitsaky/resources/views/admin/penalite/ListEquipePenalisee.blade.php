@@ -36,7 +36,7 @@
                                             <td>Equipe {{ $data->nom }}</td>
                                             <td>{{ $data->penalite }}</td>
                                            <td>
-                                                <form action="{{url('supprimerPenalite')}}" method="get">
+                                                <form action="{{url('supprimer-penalite')}}" method="get">
                                                     <input type="hidden" name="id" value="{{$data->id_penalite}}">
                                                     <input type="submit" style="background: linear-gradient(to right, #cb3636e8, #9a1f1fba);padding: 5px;border-radius: 9px;padding-top: 0px;padding-bottom: 3px;color: wheat;" value="suprimer">
                                                 </form></td>

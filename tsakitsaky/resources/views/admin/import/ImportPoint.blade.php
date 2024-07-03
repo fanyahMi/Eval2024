@@ -1,8 +1,8 @@
 <div class="masonry-item col-md-12">
     <div class="bgc-white p-20 bd">
-        <h4 class="c-grey-900">Importation de points</h4>
+        <h4 class="c-grey-900">Importation des points</h4>
         <div class="mT-30">
-            <form action="{{url('importationpoint')}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('importation-point')}}" method="post" enctype="multipart/form-data">
 
                 <!-- CSRF Token -->
                 @csrf

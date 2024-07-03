@@ -102,12 +102,6 @@
           <div class="">
             <div class="peers ai-c jc-sb fxw-nw">
               <div class="peer">
-                <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                  <input type="checkbox" id="inputCall1" name="inputCheckboxesCall" class="peer">
-                  <label for="inputCall1" class="peers peer-greed js-sb ai-c form-label">
-                    <span class="peer peer-greed">Remember Me</span>
-                  </label>
-                </div>
               </div>
               <div class="peer">
                 <button style="background: linear-gradient(to right, #f93765, #fd695f);border: none;display: inline-block;" class="btn btn-color">Login</button>

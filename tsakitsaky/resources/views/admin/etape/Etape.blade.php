@@ -5,7 +5,7 @@
           <div class="bgc-white bd bdrs-3 p-20 mB-20">
               <div class="row">
                   <div class="col-md-6">
-                      <h1 style="font-size: 20px;font-weight: bold" class="c-grey-900 mB-20">Liste des étapes</h1>
+                      <h1 style="font-size: 20px;font-weight: bold" class="c-grey-900 mB-20">Liste des étapes de la course</h1>
                   </div>
                   <div class="col-md-2"></div>
               </div>

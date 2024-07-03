@@ -22,21 +22,21 @@ use App\Http\Middleware\CheckUserSession;
 Route::get('/Login-Administrateur', [AdminController::class, 'signIn'])->name('Login-Administrateur');
 Route::post('/login', [AdminController::class, 'login'])->name('login');
 Route::middleware([CheckAdminRole::class])->group(function () {
-    Route::get('/acceuil', [AdminController::class, 'dashboard'])->name('dashboard');
-    Route::get('/logoutAdmin', [AdminController::class, 'logout']);
+    Route::get('/classement-course-equipe', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/logout-Admin', [AdminController::class, 'logout']);
     Route::get('/liste-des-etapes', [AdminController::class, 'listeEtape'])->name('listeEtape');
     Route::get('/formulaire-pour-ajout-de-temps/{id}', [AdminController::class, 'formulaireTemps'])->name('formulaireTemps');
-    Route::post('/addTemps', [AdminController::class, 'addTemps'])->name('addTemps');
+    Route::post('/add-temps', [AdminController::class, 'addTemps'])->name('addTemps');
     Route::get('/importation-etapes-et-resultat', [AdminController::class, 'importetapesresultat']);
     Route::get('/importation-des-points', [AdminController::class, 'importpoint']);
-    Route::post('/importationpoint', [AdminController::class, 'importationpoint']);
-    Route::post('/importationetapesresultat', [AdminController::class, 'importationetapesresultat']);
-    Route::get('/genererCategorie', [AdminController::class, 'genererCategorie'])->name('genererCategorie');
-    Route::get('/clearBase', [AdminController::class, 'clearBase'])->name('clearBase');
+    Route::post('/importation-point', [AdminController::class, 'importationpoint']);
+    Route::post('/importation-etapes-resultat', [AdminController::class, 'importationetapesresultat']);
+    Route::get('/generer-categorie', [AdminController::class, 'genererCategorie'])->name('genererCategorie');
+    Route::get('/clear-Base', [AdminController::class, 'clearBase'])->name('clearBase');
     Route::get('/liste-des-penalites', [AdminController::class, 'listPenalite']);
     Route::get('/ajout-de-penalite', [AdminController::class, 'penalite']);
-    Route::post('/addPenalite', [AdminController::class, 'addPenalite']);
-    Route::get('/supprimerPenalite', [AdminController::class, 'supprimerPenalite']);
+    Route::post('/add-penalite', [AdminController::class, 'addPenalite']);
+    Route::get('/supprimer-penalite', [AdminController::class, 'supprimerPenalite']);
     Route::get('/certificat', [AdminController::class, 'certificat']);
     Route::get('/exportation', [AdminController::class, 'exportation']);
     Route::get('/export', [AdminController::class, 'export']);
@@ -68,7 +68,6 @@ Route::middleware([CheckUserSession::class])->group(function () {
 
 });
 /*************************************************** */
-Route::get('/pdf', [Controllers::class, 'pdf'])->name('pdf');
 
 Route::middleware([CheckEquipeRole::class])->group(function () {
     Route::get('/export/csv', [UsersController::class, 'exportToCSV'])->name('export.csv');
@@ -90,15 +89,4 @@ Route::middleware([CheckEquipeRole::class])->group(function () {
     Route::get('/rechercheTableau', [RechercheController::class, 'rechercheTableau'])->name('rechercheTableau');
     Route::get('/tableauNormal', [RechercheController::class, 'tableauNormal'])->name('tableauNormal');
 });
-
-//Mail
-Route::get('/sendMail', [MailController::class, 'sendMail'])->name('sendMail');
-
-
-//Chart
-Route::get('/chart-donutData', [ChartController::class, 'donutData']);
-Route::get('/chart-secteureData', [ChartController::class, 'secteureData']);
-Route::get('/chart-barChartData', [ChartController::class, 'barChartData']);
-Route::get('/chart-lineSimpleChartData', [ChartController::class, 'lineSimpleChartData']);
-Route::get('/chart-linePlusData', [ChartController::class, 'linePlusData']);
 
