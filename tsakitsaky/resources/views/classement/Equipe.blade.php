@@ -16,7 +16,7 @@
             </div>
             <br>
               <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-9">
                       <div id="table-container">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered">
@@ -29,8 +29,8 @@
                                 <tbody id="table-body">
                                     @foreach($classementEquipeSimple as $data)
                                         <tr>
-                                            <td><a href="{{'pointEtape'}}/{{ $data->equipe }}">{{ $data->equipe_libelle }}</a></td>
-                                            <td>{{ $data->total_points }}</td>
+                                            <td><a href="{{'pointEtape'}}/{{ $data->equipe }}">Equipe {{ $data->equipe_libelle }}</a></td>
+                                            <td style="text-align: right">{{ $data->total_points }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-9">
                                 <div id="table-container">
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered">
@@ -122,11 +122,11 @@
                                                @endphp
 
                                                <tr>
-                                                   <td>{{ $d['data'][$i]->equipe_libelle }}</td>
+                                                   <td>Equipe {{ $d['data'][$i]->equipe_libelle }}</td>
                                                    @if ($isTied)
-                                                       <td style="background-color: #d74f56">{{ $currentPoints }}</td>
+                                                       <td style="background-color: #d74f56;text-align: right">{{ $currentPoints }}</td>
                                                    @else
-                                                       <td>{{ $currentPoints }}</td>
+                                                       <td style="text-align: right">{{ $currentPoints }}</td>
                                                    @endif
                                                </tr>
                                            @endfor

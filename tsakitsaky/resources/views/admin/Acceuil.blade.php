@@ -34,8 +34,8 @@
                                 <tbody id="table-body">
                                     @foreach($classementEquipeSimple as $key => $data)
                                         <tr>
-                                            <td>{{ $data->equipe_libelle }}</td>
-                                            <td>{{ $data->total_points }}</td>
+                                            <td>Equipe {{ $data->equipe_libelle }}</td>
+                                            <td style="text-align: right">{{ $data->total_points }}</td>
                                             @php
                                                 if ($key == (count($classementEquipeSimple))-1) {
                                                     $dat.= $data ->total_points;
@@ -124,8 +124,8 @@
                                     @foreach($d['data'] as $key => $data)
 
                                         <tr>
-                                            <td >{{$data->equipe_libelle}}</td>
-                                            <td >{{$data->points}}</td>
+                                            <td >Equipe {{$data->equipe_libelle}}</td>
+                                            <td style="text-align: right">{{$data->points}}</td>
                                             @php
                                                 if ($key == (count($d['data'])-1)) {
                                                     $dat.= $data ->points;
