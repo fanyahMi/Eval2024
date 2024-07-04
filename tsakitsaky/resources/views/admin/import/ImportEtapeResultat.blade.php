@@ -1,8 +1,8 @@
 <div class="masonry-item col-md-12">
     <div class="bgc-white p-20 bd">
-        <h4 class="c-grey-900">Importation de donnee</h4>
+        <h4 class="c-grey-900">Importation des données des étapes et de résultat</h4>
         <div class="mT-30">
-            <form action="{{url('importationetapesresultat')}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('importation-etapes-resultat')}}" method="post" enctype="multipart/form-data">
 
                 <!-- CSRF Token -->
                 @csrf

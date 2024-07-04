@@ -12,19 +12,16 @@
 
 
                 <div class="row">
-                    <div class="col-md-6">
-                        <h1 style="font-size: 20px;font-weight: bold" class="c-grey-900 mB-20">Temps effectuer par coureur sur l'étape : {{ $etape }}</h1>
+                    <div class="col-md-12">
+                        <h1 style="font-size: 22px;font-weight: bold" class="c-grey-900 mB-20">Affectation de temps effectuer par coureur sur l'étape : {{ $etape }}</h1>
                     </div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-4">
-                        <input type="hidden" name="recherche" class="form-control" id="inputtext" placeholder="Votre Recherche">
-                    </div>
+
                 </div>
 
                 <!-- Ajout du formulaire sur une seule ligne -->
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{url('addTemps')}}" method="post">
+                        <form action="{{url('add-temps')}}" method="post">
                             @csrf
                             <div class="row" >
                                 <div class="col-md-3">
@@ -76,8 +73,15 @@
                     <br>
 
                     <div class="row">
+                        <div class="col-md-12">
+                            <h2 style="font-size: 19px;font-weight: bold" class="c-grey-900 mB-20">Temps effectuer par coureur sur l'étape : {{ $etape }}</h2>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
                         <div class="col-md-6">
-                            <h4 class="c-grey-900 mB-20">Sans categorie</h4>
+                            <h3 class="c-grey-900 mB-20">Sans categorie</h3>
                         </div>
                     </div>
                         <br>
@@ -125,7 +129,7 @@
                     @foreach($resultat as $d)
                         <div class="row">
                             <div class="col-md-6">
-                                <h4 class="c-grey-900 mB-20">Categorie {{$d['categorie']}}</h4>
+                                <h3 class="c-grey-900 mB-20">Categorie {{$d['categorie']}}</h3>
                             </div>
                         </div>
                             <br>

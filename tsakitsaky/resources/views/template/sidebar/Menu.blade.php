@@ -7,7 +7,7 @@
             <span class="icon-holder">
                 <i class="c-blue-500 ti-home"></i>
             </span>
-            <span class="title">Acceuil</span>
+            <span class="title">Accueil</span>
             </a>
         </li>
         <li class="nav-item">
@@ -23,7 +23,7 @@
     @if(Utilisateurs::roleAdmin(session('roles')))
 
     <li class="nav-item">
-        <a class="sidebar-link" href="{{url('clearBase')}}" >
+        <a class="sidebar-link" href="{{url('clear-Base')}}" >
         <span class="icon-holder">
             <i class=""></i>
         </span>
@@ -31,11 +31,11 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="sidebar-link" href="acceuil" >
+        <a class="sidebar-link" href="{{url('classement-course-equipe')}}" >
         <span class="icon-holder">
             <i class="c-blue-500 ti-home"></i>
         </span>
-        <span class="title">Acceuil</span>
+        <span class="title">Classements par Équipe</span>
         </a>
     </li>
 
@@ -65,7 +65,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="sidebar-link" href="{{url('genererCategorie')}}" >
+            <a class="sidebar-link" href="{{url('generer-categorie')}}" >
             <span class="icon-holder">
                 <i class="fas fa-chart-bar"></i>
             </span>

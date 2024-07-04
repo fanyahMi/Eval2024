@@ -36,7 +36,7 @@
                                             <td>{{ $data->nom }}</td>
                                             <td>{{ $data->penalite }}</td>
                                            <td>
-                                                <form action="{{url('supprimerPenalite')}}" method="get">
+                                                <form action="{{url('supprimer-penalite')}}" method="get">
                                                     <input type="hidden" name="id" value="{{$data->id_penalite}}">
                                                     <input type="submit" value="suprimer">
                                                 </form></td>

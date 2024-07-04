@@ -37,7 +37,7 @@
                           </a>
                         @endif
                         @if(session('id_utilisateurAdmin'))
-                            <a href="{{ url('logoutAdmin') }}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                            <a href="{{ url('logout-Admin') }}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                             <i class="ti-power-off mR-10"></i>
                             <span>Logout</span>
                           </a>

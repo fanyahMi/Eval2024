@@ -5,7 +5,7 @@
     <div class="row mT-15">
         <div class="row">
             <div class="col-md-6">
-                <h1 style="font-size: 20px" class="c-grey-900 mB-20"><b>Classement des equipes</b></h1>
+                <h1 style="font-size: 20px" class="c-grey-900 mB-20"><b>Classement de Course par Équipe</b></h1>
             </div>
             <div class="col-md-2"></div>
         </div>
@@ -13,7 +13,7 @@
           <div class="bgc-white bd bdrs-3 p-20 mB-20">
               <div class="row">
                 <div class="col-md-6">
-                    <h5 class="c-grey-900 mB-20"><b>Sans categorie</b></h5>
+                    <h2 class="c-grey-900 mB-20"><b>Classement Global Sans Catégorie</b></h2>
                 </div>
               </div>
               <div class="row">
@@ -101,7 +101,7 @@
         <div class="bgc-white bd bdrs-3 p-20 mB-20">
             <div class="row">
                 <div class="col-md-6">
-                    <h5 class="c-grey-900 mB-20"><b>Categorie {{$d['categorie']}}</b></h5>
+                    <h2 class="c-grey-900 mB-20"><b>Categorie {{$d['categorie']}}</b></h2>
                 </div>
             </div>
                 <br>
