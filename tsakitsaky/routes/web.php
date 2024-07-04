@@ -68,7 +68,6 @@ Route::middleware([CheckUserSession::class])->group(function () {
 
 });
 /*************************************************** */
-Route::get('/pdf', [Controllers::class, 'pdf'])->name('pdf');
 
 Route::middleware([CheckEquipeRole::class])->group(function () {
     Route::get('/export/csv', [UsersController::class, 'exportToCSV'])->name('export.csv');
@@ -90,15 +89,4 @@ Route::middleware([CheckEquipeRole::class])->group(function () {
     Route::get('/rechercheTableau', [RechercheController::class, 'rechercheTableau'])->name('rechercheTableau');
     Route::get('/tableauNormal', [RechercheController::class, 'tableauNormal'])->name('tableauNormal');
 });
-
-//Mail
-Route::get('/sendMail', [MailController::class, 'sendMail'])->name('sendMail');
-
-
-//Chart
-Route::get('/chart-donutData', [ChartController::class, 'donutData']);
-Route::get('/chart-secteureData', [ChartController::class, 'secteureData']);
-Route::get('/chart-barChartData', [ChartController::class, 'barChartData']);
-Route::get('/chart-lineSimpleChartData', [ChartController::class, 'lineSimpleChartData']);
-Route::get('/chart-linePlusData', [ChartController::class, 'linePlusData']);
 

@@ -39,7 +39,7 @@ class AdminController extends Controller
     public function signIn(Request $request)
     {
        if ($request->session()->has('id_utilisateurAdmin')) {
-           return redirect('/acceuil');
+           return redirect('/classement-course-equipe');
        }
         return view('auth.login');
     }
@@ -65,7 +65,7 @@ class AdminController extends Controller
             $request->session()->put('id_utilisateurAdmin', $response['user']->id_utilisateur);
             $request->session()->put('name', $response['user']->nom);
             $request->session()->put('roles', $response['roles']);
-            return redirect()->intended('/acceuil');
+            return redirect()->intended('/classement-course-equipe');
         } catch (\Throwable $th) {
           return back()->withErrors(['email' => $th->getMessage()]);
         }
