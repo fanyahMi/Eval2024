@@ -82,7 +82,9 @@ class EquipeController extends Controller
         $rec = Etape::paginate(10);
 
         return view("template.Layout", [
-            'title' => 'Liste des étapes',
+            'title' => 'Liste des étapes de la course',
+            'descriptionMeta' => "Découvrez la liste complète des étapes de la course, avec leurs numéros, longueurs et le nombre de coureurs participants.",
+            'keywordMeta'=>"étapes de course, numéros d'étape, longueur d'étape, nombre de coureurs",
             'page' => "equipe.Etape",
             'recherches' => $rec
         ]);
@@ -104,8 +106,10 @@ class EquipeController extends Controller
         $eta = Etape::getEtapeLibelle($id);
         $listCoureurEquipe = Equipe::getListeCoureur(session('id_utilisateurEquipe'));
         return view("template.Layout", [
-            'title' => 'Affectation de coureur pour une etape',
+            'title' => 'Liste des coureurs par étape - Gestion des Étapes',
             'page' => "equipe.Affectation",
+            'descriptionMeta' => "Consultez la liste complète des coureurs participant à une étape donnée. Trouvez des informations détaillées sur chaque coureur.Utilisez le formulaire pour effectuer une affectation spécifique pour cette étape. ",
+            'keywordMeta'=>"liste des coureurs, étape, compétition",
             'recherches' => $listCoureur,
             'nbMax' => $nbrMax,
             'etape' => $eta,
@@ -140,7 +144,7 @@ class EquipeController extends Controller
         $nbrMax = Etape::getNombreMaxCoureurEtape($id);
             if( count($listCoureurEtape) < $nbrMax ){
 
-                return Redirect::to('liste_des_Coureur/'.$id);
+                return Redirect::to('Liste-des-coureurs/'.$id);
             }
             return redirect()->back()->withErrors("Le nombre maximal de courreur pour ".$listCoureurEtape[0]->etape. " est ".$nbrMax );
      }

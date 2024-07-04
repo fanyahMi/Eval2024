@@ -3,7 +3,7 @@
     <div class="row mT-15">
         <div class="row">
             <div class="col-md-6">
-                <h1 style="font-size: 20px; font-weight: bold" class="c-grey-900 mB-20">Classement des equipes</h1>
+                <h1 style="font-size: 20px; font-weight: bold" class="c-grey-900 mB-20">Classement des equipes par catégorie</h1>
             </div>
             <div class="col-md-2"></div>
         </div>
@@ -11,7 +11,7 @@
           <div class="bgc-white bd bdrs-3 p-20 mB-20">
               <div class="row">
                 <div class="col-md-6">
-                    <h5 class="c-grey-900 mB-20"><b>Sans categorie</b></h5>
+                    <h2 class="c-grey-900 mB-20"><b>Sans categorie</b></h2>
                 </div>
             </div>
             <br>
@@ -112,12 +112,10 @@
                                                    $currentPoints = $d['data'][$i]->points;
                                                    $isTied = false;
 
-                                                   // Check if the current team has the same points as the next team
                                                    if ($i < count($d['data']) - 1 && $currentPoints == $d['data'][$i + 1]->points) {
                                                        $isTied = true;
                                                    }
 
-                                                   // Check if the current team has the same points as the previous team
                                                    if ($i > 0 && $currentPoints == $d['data'][$i - 1]->points) {
                                                        $isTied = true;
                                                    }

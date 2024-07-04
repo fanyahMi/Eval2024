@@ -50,21 +50,21 @@ Route::middleware([CheckAdminRole::class])->group(function () {
 Route::get('/Login-Equipe', [EquipeController::class, 'signIn']);
 Route::post('/siginEquipe', [EquipeController::class, 'login'])->name('login');
 Route::middleware([CheckEquipeRole::class])->group(function () {
-    Route::get('/logoutEquipe', [EquipeController::class, 'logout'])->name('logoutEquipe');
+    Route::get('/logout-Equipe', [EquipeController::class, 'logout'])->name('logoutEquipe');
     Route::redirect('/', '/Liste-des-coureurs-par-tout-les-etapes');
     Route::get('/Liste-des-coureurs-par-tout-les-etapes', [EquipeController::class, 'index'])->name('accueil');
-    Route::get('/liste_des_etapes_par_equipe', [EquipeController::class, 'listeEtapeEquipe'])->name('listeEtapeEquipe');
-    Route::get('/liste_des_Coureur/{id}', [EquipeController::class, 'listeCoureur'])->name('listeCoureur');
-    Route::post('/affectation_du_coureur', [EquipeController::class, 'addAffectationEtape'])->name('addAffectationEtape');
-    Route::get('/ajout_de_coureur/{id}', [EquipeController::class, 'ajoutcoureur'])->name('addAffectationEtape');
+    Route::get('/liste-etapes-course', [EquipeController::class, 'listeEtapeEquipe'])->name('listeEtapeEquipe');
+    Route::get('/Liste-des-coureurs/{id}', [EquipeController::class, 'listeCoureur'])->name('listeCoureur');
+    Route::post('/affectation-du-coureur', [EquipeController::class, 'addAffectationEtape'])->name('addAffectationEtape');
+    Route::get('/ajout-de-coureur/{id}', [EquipeController::class, 'ajoutcoureur'])->name('addAffectationEtape');
 });
 /*****************/
 
 
 /************Equipe et Admin *******/
 Route::middleware([CheckUserSession::class])->group(function () {
-    Route::get('/classement_general_par_etape', [EquipeAdminController::class, 'classementEtape'])->name('classementEtape');
-    Route::get('/classement_par_equipe', [EquipeAdminController::class, 'classementEquipe'])->name('classementEquipe');
+    Route::get('/classements-par-etape-par-equipe', [EquipeAdminController::class, 'classementEtape'])->name('classementEtape');
+    Route::get('/classement-par-equipe-par-categorie', [EquipeAdminController::class, 'classementEquipe'])->name('classementEquipe');
 
 });
 /*************************************************** */
