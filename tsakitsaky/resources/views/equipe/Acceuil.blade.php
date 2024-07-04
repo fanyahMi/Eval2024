@@ -7,7 +7,7 @@
 
 <div class="row mT-20">
       <div class="row mT-15">
-        <h1 class="c-grey-900 mB-20" style="font-size: 20px;">Liste des coureurs par étape </h1>
+        <h1 class="c-grey-900 mB-20" style="font-size: 20px;">Liste des coureurs par tout les etapes </h1>
         <div class="col-md-12">
             @if ($errors->any())
                 <div class="error-message">
