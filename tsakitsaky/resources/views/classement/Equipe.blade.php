@@ -29,7 +29,7 @@
                                 <tbody id="table-body">
                                     @foreach($classementEquipeSimple as $data)
                                         <tr>
-                                            <td><a href="{{'pointEtape'}}/{{ $data->equipe }}">Equipe {{ $data->equipe_libelle }}</a></td>
+                                            <td><a href="{{'point-par-etape-pour-equipe'}}/{{ $data->equipe }}">Equipe {{ $data->equipe_libelle }}</a></td>
                                             <td style="text-align: right">{{ $data->total_points }}</td>
                                         </tr>
                                     @endforeach
@@ -46,43 +46,6 @@
                       </div>
                   </div>
               </div>
-<!----------------
-
-              <br>
-              <div class="row">
-                <div class="col-md-6">
-                    <h4 class="c-grey-900 mB-20">Total catégorie </h4>
-                </div>
-            </div>
-            <br>
-
-              <div class="row">
-                  <div class="col-md-12">
-                      <div id="table-container">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Equipe</th>
-                                        <th>Point</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="table-body">
-                                    @foreach($classementEquipe as $data)
-                                        <tr>
-                                            <td>{{ $data->equipe_libelle }}</td>
-                                            <td>{{ $data->total_points }}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-
-                      </div>
-                  </div>
-              </div>
-
----------------->
 
               <br>
                     @foreach($resultat as $d)

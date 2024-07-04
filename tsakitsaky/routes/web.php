@@ -42,7 +42,7 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::get('/exportation', [AdminController::class, 'exportation']);
     Route::get('/export', [AdminController::class, 'export']);
     Route::get('/resultat-pour-une-etape/{id}', [AdminController::class, 'resultatEtape']);
-    Route::get('/pointEtape/{id}', [AdminController::class, 'poinEtape']);
+    Route::get('/point-par-etape-pour-equipe/{id}', [AdminController::class, 'poinEtape']);
     Route::get('/classement/global', [AdminController::class, 'getClassementGlobal']);
     Route::get('/classement/categorie', [AdminController::class, 'getClassementParCategorie']);
     Route::get('/certificat-data', [AdminController::class, 'getCertificatData']);

@@ -5,12 +5,12 @@
           <div class="bgc-white bd bdrs-3 p-20 mB-20">
               <div class="row">
                   <div class="col-md-6">
-                      <h4 class="c-grey-900 mB-20">Resultat</h4>
+                      <h1 class="c-grey-900 mB-20">Point obtenue par etape</h1>
                   </div>
                   <div class="col-md-2"></div>
               </div>
               <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-9">
                       <div id="table-container">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered">
@@ -24,7 +24,7 @@
                                         @foreach ($resultat as $data)
                                             <tr>
                                                 <td>{{$data->etape }}</td>
-                                                <td>{{$data->points}}</td>
+                                                <td style="text-align: right">{{$data->points}}</td>
                                             </tr>
                                         @endforeach
                                 </tbody>

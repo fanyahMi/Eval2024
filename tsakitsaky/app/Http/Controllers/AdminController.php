@@ -303,8 +303,10 @@ class AdminController extends Controller
                 ->get();
 
         return view("template.Layout", [
-            'title' => 'Point',
+            'title' => 'Point par etape',
             'page' => "admin.etape.pointEtape",
+            'descriptionMeta' => "Points obtenus par étape pour l'équipe",
+            'keywordMeta'=>"points, étapes, équipe, compétition",
             'resultat' => $result
         ]);
      }
