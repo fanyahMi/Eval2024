@@ -10,6 +10,7 @@
         <link href="{{ asset('assets/css/layout.min.css') }}" rel="stylesheet" />
         <title>{{ $title }}</title>
         <script defer="defer" src="{{ asset('main.js') }} "></script>
+
     </head>
   <body class="app">
 

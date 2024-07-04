@@ -1,71 +1,5 @@
-<style>
-    body {
-    font-family: Roboto;
-}
+<link href="{{ asset('assets/css/certificat.min.css') }}" rel="stylesheet" />
 
-.certificate-container {
-    padding: 50px;
-    width: 1024px;
-}
-.certificate {
-    border: 20px solid #0C5280;
-    padding: 25px;
-    height: 600px;
-    position: relative;
-    background-image: url(../../assets/static/images/confetti-vector-background-party-design-with-colorful-confetti_165143-1898.avif);
-    background-size: 100%;
-}
-
-.certificate:after {
-    content: '';
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    position: absolute;
-    background-size: 100%;
-    z-index: -1;
-}
-
-.certificate-header > .logo {
-    width: 150px;
-}
-
-.certificate-title {
-    text-align: center;
-}
-
-.certificate-body {
-    text-align: center;
-}
-
-h1 {
-
-    font-weight: 400;
-    font-size: 48px;
-    color: #0C5280;
-}
-
-.student-name {
-    font-size: 24px;
-}
-
-.certificate-content {
-    margin: 0 auto;
-    width: 750px;
-}
-
-.about-certificate {
-    width: 380px;
-    margin: 0 auto;
-}
-
-.topic-description {
-
-    text-align: center;
-}
-
-</style>
 <div class="certificate-container">
     <div class="certificate">
         <div class="water-mark-overlay"></div>
@@ -76,20 +10,20 @@ h1 {
 
             <p class="certificate-title"><strong>RUNNING MARATHON</strong></p>
             <h1>CERTIFICAT DE MERITE</h1>
-            <p class="student-name">Equipe {{$resultat->equipe_libelle}}</p>
+            <p class="student-name" id="equipeLibelle"></p>
             <div class="certificate-content">
                 <div class="about-certificate">
                     <p>
                         en reconnaissance de sa performance exceptionnelle.
                     </p>
                 </div>
-                <p class="topic-title">
-                    Avec un temps très impressionnant , Equipe {{$resultat->equipe_libelle}} a démontré un engagement,
+                <p class="topic-title" id="certificateText">
+                    Avec un temps très impressionnant, Equipe [Nom équipe] a démontré un engagement,
                     une détermination et une endurance exemplaires.
                 </p>
                 <div class="text-center">
                     <p class="topic-description text-muted">
-                        Nous félicitons Equipe {{$resultat->equipe_libelle}} pour cet exploit remarquable et célébrons cette réalisation extraordinaire.
+                        Nous félicitons Equipe [Nom équipe] pour cet exploit remarquable et célébrons cette réalisation extraordinaire.
                     </p>
                 </div>
             </div>
@@ -104,7 +38,31 @@ h1 {
         </div>
     </div>
 </div>
+
 <div class="peer">
     <a href="{{url('export')}}" style="background: linear-gradient(to right, #364fcb, #4f6ad7);border: none;display: inline-block;" class="btn btn-color">
     Exporter</a>
 </div>
+
+<script src="{{ asset('assets/js/jquery.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "{{ url('certificat-data') }}",
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.result) {
+                    $('#equipeLibelle').text('Equipe ' + response.result.equipe_libelle);
+                    $('#certificateText').html('Avec un temps très impressionnant, Equipe ' + response.result.equipe_libelle + ' a démontré un engagement, une détermination et une endurance exemplaires.');
+                } else {
+                    console.error('Erreur lors de la récupération des données du certificat.');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Erreur AJAX: ' + status + ', ' + error);
+            }
+        });
+    });
+</script>
+
