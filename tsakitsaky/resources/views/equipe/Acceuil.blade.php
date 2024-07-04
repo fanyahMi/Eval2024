@@ -5,7 +5,7 @@
     }
 </style>
 
-<div class="row mT-30">
+<div class="row mT-20">
       <div class="row mT-15">
         <h1 class="c-grey-900 mB-20" style="font-size: 20px;">Liste des coureurs par étape </h1>
         <div class="col-md-12">

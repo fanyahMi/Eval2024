@@ -67,8 +67,10 @@ class EquipeController extends Controller
                         ->get();
 
         return view("template.Layout", [
-            'title' => 'Acceuil',
+            'title' => 'Liste des coureurs par tout les etapes',
             'page' => "equipe.Acceuil",
+            'descriptionMeta' => "Découvrez la liste complète des coureurs participant à toutes les étapes.",
+            'keywordMeta'=>"coureurs, étapes, compétition",
             'etapes'=>$lesEtape,
             'coureur' => $listCoureur,
             'nb_coureur' => $nbcoureur
