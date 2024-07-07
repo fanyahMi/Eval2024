@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Equipe;
 use App\Models\Categorie;
+use App\Models\Etape;
 
 class EquipeAdminController extends Controller
 {
@@ -32,5 +33,10 @@ class EquipeAdminController extends Controller
             'classementEquipeSimple' => $classemeEquipeSimple,
             'resultat'  =>$classementCategorie
         ]);
+    }
+
+    public function getListeEtape(){
+        $result = Etape::paginate(10);
+        return response()->json(['result' => $result]);
     }
 }

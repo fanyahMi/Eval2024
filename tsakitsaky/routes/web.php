@@ -70,38 +70,12 @@ Route::middleware([CheckEquipeRole::class])->group(function () {
 Route::middleware([CheckUserSession::class])->group(function () {
     Route::get('/classements-par-etape-par-equipe', [EquipeAdminController::class, 'classementEtape'])->name('classementEtape');
     Route::get('/classement-par-equipe-par-categorie', [EquipeAdminController::class, 'classementEquipe'])->name('classementEquipe');
+    Route::get('/liste-etapes', [EquipeAdminController::class, 'getListeEtape'])->name('getListeEtape');
 
 });
 /*************************************************** */
 
-Route::middleware([CheckEquipeRole::class])->group(function () {
-    Route::get('/export/csv', [UsersController::class, 'exportToCSV'])->name('export.csv');
-    Route::get('/export/excel', [UsersController::class, 'exportToExcel'])->name('export.excel');
-
-});
-
-Route::middleware([CheckEquipeRole::class])->group(function () {
-    Route::get('/formgeneralize', [Controllers::class, 'formgeneralize'])->name('formgeneralize');
-    Route::get('/formUpdate/{id}', [Controllers::class, 'getDetail'])->name('formUpdate/{id}');
-    Route::post('/addform', [Controllers::class, 'addform'])->name('addform');
-    Route::post('/updateM', [Controllers::class, 'updateM'])->name('updateM');
-    Route::post('/importerFinal', [Controllers::class, 'importFinal'])->name('importerFinal');
-    Route::get('/recherche', [RechercheController::class, 'recherche'])->name('recherche');
-    Route::get('/fulltext', [RechercheController::class, 'fulltext'])->name('fulltext');
-    Route::get('/multimot', [RechercheController::class, 'multimot'])->name('multimot');
-    Route::get('/multicritere', [RechercheController::class, 'multicritere'])->name('multicritere');
-    Route::get('/tableau', [RechercheController::class, 'tableau'])->name('tableau');
-    Route::get('/rechercheTableau', [RechercheController::class, 'rechercheTableau'])->name('rechercheTableau');
-    Route::get('/tableauNormal', [RechercheController::class, 'tableauNormal'])->name('tableauNormal');
-});
 
 
-Route::get('js/main.js', function () {
-    $content = file_get_contents(public_path('js/main.js'));
 
-    $response = Response::make($content, 200);
-    $response->header('Content-Type', 'application/javascript');
-    $response->header('Cache-Control', 'public, max-age=604800'); // Cache pendant 7 jours (604800 secondes)
 
-    return $response;
-});

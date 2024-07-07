@@ -79,16 +79,21 @@ class EquipeController extends Controller
 
 
      public function listeEtapeEquipe(Request $request){
-        $rec = Etape::paginate(10);
+        if ($request->ajax()) {
+            $rec = Etape::paginate(10);
+            return response()->json($rec);
+        }
 
         return view("template.Layout", [
             'title' => 'Liste des étapes de la course',
             'descriptionMeta' => "Découvrez la liste complète des étapes de la course, avec leurs numéros, longueurs et le nombre de coureurs participants.",
             'keywordMeta'=>"étapes de course, numéros d'étape, longueur d'étape, nombre de coureurs",
             'page' => "equipe.Etape",
-            'recherches' => $rec
         ]);
      }
+
+
+
 
      public function controlcourreur(Request $request){
         $rec = Etape::paginate(10);
