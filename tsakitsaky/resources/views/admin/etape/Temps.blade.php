@@ -184,22 +184,26 @@
 <script>
     $(document).ready(function() {
         $('#addTempsForm').submit(function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            // Efface les messages d'erreur existants
+            $('.error-message').text('');
 
             $.ajax({
                 type: 'POST',
-                url: $(this).attr('action'),
-                data: $(this).serialize(),
+                url: $(this).attr('action'), // URL de l'action du formulaire
+                data: $(this).serialize(), // Sérialise les données du formulaire
                 dataType: 'json',
                 success: function(response) {
                     alert('Temps ajouté avec succès.');
-                    $('#addTempsForm')[0].reset();
-                    location.reload();
+                    $('#addTempsForm')[0].reset(); // Réinitialise le formulaire
+                    location.reload(); // Recharge les données, mais vous pouvez supprimer si vous ne voulez pas
                 },
                 error: function(xhr, status, error) {
-                    var errors = xhr.responseJSON.errors;
+                    var errors = xhr.responseJSON.errors; // Récupère les erreurs JSON
                     $.each(errors, function(index, value) {
-                        $('#error_' + index).text(value);
+                        // Affiche les erreurs sous les champs de formulaire correspondants
+                        $('#error_' + index).text(value[0]);
                     });
                 }
             });

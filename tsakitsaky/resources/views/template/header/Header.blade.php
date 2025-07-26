@@ -1,21 +1,5 @@
 <div class="header navbar">
           <div class="header-container">
-            <ul class="nav-left">
-              <li>
-                <a id="sidebar-toggle" class="sidebar-toggle" href="javascript:void(0);">
-                  <i class="ti-menu"></i>
-                </a>
-              </li>
-              <li class="search-box">
-                <a class="search-toggle no-pdd-right" href="javascript:void(0);">
-                  <i class="search-icon ti-search pdd-right-10"></i>
-                  <i class="search-icon-close ti-close pdd-right-10"></i>
-                </a>
-              </li>
-              <li class="search-input">
-                <input class="form-control" type="text" placeholder="Search...">
-              </li>
-            </ul>
             <ul class="nav-right">
               <li class="dropdown">
                 <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -27,7 +11,6 @@
                   </div>
                 </a>
                 <ul class="dropdown-menu fsz-sm" aria-labelledby="dropdownMenuLink">
-
                   <li role="separator" class="divider"></li>
                   <li>
                         @if(session('id_utilisateurEquipe'))

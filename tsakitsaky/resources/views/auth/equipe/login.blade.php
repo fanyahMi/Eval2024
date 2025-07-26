@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Login Equipe</title>
     <link href="{{ asset('assets/css/login.min.css') }}" rel="stylesheet" />
-  <script defer="defer" src="main.js"></script></head>
+  </head>
   <body class="app">
     <div id="loader">
       <div class="spinner"></div>
     </div>
 
-    <script src="{{ asset('assets/js/login.js') }}"></script>
 
     <div class="peers ai-s fxw-nw h-100vh">
       <div class="d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-c " style='background-image: url("assets/static/images/istockphoto-1204568605-612x612.jpg")'>
@@ -57,4 +56,6 @@
       </div>
     </div>
   </body>
+  <script defer="defer" src="main.js"></script>
+  <script src="{{ asset('assets/js/login.js') }}"></script>
 </html>

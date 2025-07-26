@@ -23,3 +23,19 @@
       </div>
     </div>
 </div>
+
+<script>
+    // Préchargement de l'image redimensionnée
+    var img = new Image();
+    img.src = "../assets/static/images/running-and-marathon-logo-design-running-man-symbol-free-vector.jpg";
+</script>
+<script>
+    // Assurer l'affichage de l'image redimensionnée après le chargement complet de la page
+    window.addEventListener('load', function() {
+      var resizedImages = document.getElementsByClassName('resized-image');
+      for (var i = 0; i < resizedImages.length; i++) {
+        resizedImages[i].setAttribute('src', 'chemin_vers_votre_image_redimensionnee.jpg');
+      }
+    });
+  </script>
+

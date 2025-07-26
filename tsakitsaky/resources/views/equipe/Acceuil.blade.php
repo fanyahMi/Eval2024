@@ -72,29 +72,3 @@
 
 </script>
 
-<script>
- /*   document.addEventListener('DOMContentLoaded', function () {
-        const searchInput = document.getElementById('inputtext');
-        const tableBody = document.getElementById('table-body');
-
-        searchInput.addEventListener('input', function () {
-            const searchTerm = this.value.toLowerCase();
-            const rows = tableBody.getElementsByTagName('tr');
-
-            Array.from(rows).forEach(row => {
-                let found = false;
-                Array.from(row.cells).forEach(cell => {
-                    const cellText = cell.textContent.toLowerCase();
-                    if (cellText.includes(searchTerm)) {
-                        found = true;
-                    }
-                });
-                if (found) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        });
-    });*/
-</script>
